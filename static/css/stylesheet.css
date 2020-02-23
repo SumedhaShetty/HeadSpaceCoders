@@ -1,0 +1,46 @@
+#background{
+    background-image: url(bg3.jpg);
+}
+
+.container{
+    padding: 20px;
+}
+
+
+.card{
+    background-color: antiquewhite;
+}
+
+.card:hover{
+    background: lightcoral;
+    color: lavander;
+}
+
+footer{
+    background-color: black;
+    padding: 15px;
+}
+
+a{
+    color:darkslategrey;
+}
+
+a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+nav{
+    padding: 15px;
+    font-weight: bold;
+}
+nav a{
+    color: black;
+    padding: 15px;
+}
+nav a:hover{
+    color: darkolivegreen ;
+}
+a.but-on{
+    color : blue !important;
+}
