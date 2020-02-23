@@ -2,15 +2,15 @@
 {% block content %}
    
 <div class="col-sm-6 col-sm-offset-3">
-<h1>{{ title }}</h1>
-<p><a href="{% url 'organize:post_create' %}" class="btn btn-primary" role="button">Create Post</a></p>
+<h1>Events</h1>
+<p><a href="{% url 'organize:post_create' %}" class="btn btn-danger" role="button">Create Post</a></p>
 <form method="GET" action="">
 <input type="text" name="q" placeholder="Search post" value="{{ request.GET.q }}"/>
 <input type="submit" value="search"/>
 </form>
 <br>
 {% for obj in object_list %}
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 500px">
     {% if obj.img %}
         <img class="card-img-top" src="{{ obj.img.url }}" class="img-responsive">
     {% endif %}
@@ -20,10 +20,10 @@
       <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
       {% if obj.user %}<p>Organizer: {{ obj.user }}</p> {% endif %}
       <h6>{{ obj.timestamp|timesince }} ago</h6>
-      <a class="btn btn-primary" margin="2px" href="{% url 'organize:post_join' id=obj.id %}">Volunteer Event</a>
-      <a class="btn btn-primary" href="{{ obj.get_absolute_url }}">View</a>
-      <a class="btn btn-primary" href="{% url 'organize:post_update' id=obj.id %}">Update</a>
-      <a class="btn btn-primary" href="{% url 'organize:post_delete' id=obj.id %}">Delete</a>
+      <a class="btn btn-dark" margin="2px" href="{% url 'organize:post_join' id=obj.id %}">Volunteer Event</a>
+      <a class="btn btn-dark" href="{{ obj.get_absolute_url }}">View</a>
+      <a class="btn btn-dark" href="{% url 'organize:post_update' id=obj.id %}">Update</a>
+      <a class="btn btn-dark" href="{% url 'organize:post_delete' id=obj.id %}">Delete</a>
     </div>
   </div>
   <br>
@@ -43,8 +43,8 @@
         </span>
 
         {% if object_list.has_next %}
-            <a href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
-            <a href="?{{ page_request_var }}={{ object_list.paginator.num_pages }}">last &raquo;</a>
+            <a class="btn btn-dark" href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
+            <a class="btn btn-dark" href="?{{ page_request_var }}={{ object_list.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>

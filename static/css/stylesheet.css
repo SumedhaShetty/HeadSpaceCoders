@@ -1,20 +1,24 @@
 #background{
     background-image: url(bg3.jpg);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
 }
 
 .container{
     padding: 20px;
 }
 
+h1{
+    color:white;
+}
+h3{
+    color:white;
+}
 
 .card{
     background-color: antiquewhite;
 }
 
-.card:hover{
-    background: lightcoral;
-    color: lavander;
-}
 
 footer{
     background-color: black;

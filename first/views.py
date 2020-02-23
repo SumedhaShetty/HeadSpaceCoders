@@ -50,4 +50,5 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-
+def donate(request):
+        return render(request,'donation.html')
